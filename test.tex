@@ -1,1 +1,288 @@
 # Test
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}
+%\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have images in pdf, png or jpg format)
+\usepackage{jheppub}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{chessfss}
+\pdfoutput=1
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{subfig}
+\usepackage{scalefnt}
+\usepackage{wrapfig}
+\usepackage{fancybox}
+\usepackage{caption}
+%\usepackage[pdftex]{graphicx}
+%\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{multirow}
+%\usepackage{subfigure}
+
+%%Macros from AMT
+\usetikzlibrary{arrows}
+\tikzset{>=angle 60}
+\tikzstyle{W}=[draw,circle,scale=.6]
+\tikzstyle{B}=[draw,circle,fill=black,scale=.6]
+\tikzstyle{H}=[draw,circle,fill=gray,scale=.6]
+\tikzstyle{every picture}=[scale=.6,baseline=(current bounding box.south)]
+
+\def\a{\alpha}
+\def\b{\beta}
+\def\c{\varepsilon}
+\def\d{\delta}
+\def\e{\epsilon}
+\def\f{\phi}
+\def\g{\gamma}
+\def\h{\theta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\m{\mu}
+\def\n{\nu}
+\def\p{\psi}
+\def\q{\partial}
+\def\r{\rho}
+\def\s{\sigma}
+\def\t{\tau}
+\def\u{\upsilon}
+\def\v{\varphi}
+\def\w{\omega}
+\def\x{\xi}
+\def\y{\eta}
+\def\z{\zeta}
+\def\D{\Delta}
+\def\G{\Gamma}
+\def\H{\Theta}
+\def\L{\zeta}
+\def\F{\Phi}
+\def\P{\Psi}
+\def\S{\Sigma}
+
+\def\aa{{\dot \a}}
+\def\bb{{\dot \b}}
+\def\ss{{\bar \s}}
+\def\hh{{\bar \h}}
+\def\CA{{\cal A}}
+\def\CB{{\cal B}}
+\def\CC{{\cal C}}
+\def\CD{{\cal D}}
+\def\CE{{\cal E}}
+\def\CG{{\cal G}}
+\def\CH{{\cal H}}
+\def\CI{{\cal I}}
+\def\CK{{\cal K}}
+\def\CL{{\cal L}}
+\def\CR{{\cal R}}
+\def\CM{{\cal M}}
+\def\CN{{\cal N}}
+\def\CO{{\cal O}}
+\def\CP{{\cal P}}
+\def\CQ{{\cal Q}}
+\def\CW{{\cal W}}
+
+\DeclareMathOperator{\Tr}{Tr}
+\newcommand{\Slash}[1]{{\ooalign{\hfil/\hfil\crcr$#1$}}}
+
+
+\def\o{\over}
+\newcommand{\gsim}{ \mathop{}_{\textstyle \sim}^{\textstyle >} }
+\newcommand{\lsim}{ \mathop{}_{\textstyle \sim}^{\textstyle <} }
+\newcommand{\vev}[1]{ \left\langle {#1} \right\rangle }
+%\newcommand{\bra}[1]{ \langle {#1} | }
+%\newcommand{\ket}[1]{ | {#1} \rangle }
+\newcommand{\EV}{ {\rm eV} }
+\newcommand{\KEV}{ {\rm keV} }
+\newcommand{\MEV}{ {\rm MeV} }
+\newcommand{\GEV}{ {\rm GeV} }
+\newcommand{\TEV}{ {\rm TeV} }
+\def\diag{\mathop{\rm diag}\nolimits}
+\def\Spin{\mathop{\rm Spin}}
+\def\SO{\mathop{\rm SO}}
+\def\O{\mathop{\rm O}}
+\def\SU{\mathop{\rm SU}}
+\def\U{\mathrm{U}}
+\def\Sp{\mathop{\rm Sp}}
+\def\SL{\mathop{\rm SL}}
+\def\tr{\mathop{\rm tr}}
+\def\rank{\mathop{\rm rank}}
+
+
+
+%\def\beq{\begin{eqnarray}}
+%\def\eeq{\end{eqnarray}}
+\def\beq#1\eeq{\begin{align}#1\end{align}}
+
+
+%%%%%Wenbin%%%%%%%
+
+
+\newcommand{\be}{\begin{eqnarray}}
+\newcommand{\ee}{\end{eqnarray}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+
+\newcommand{\nn}{\nonumber}
+\newcommand{\bn}{\begin{enumerate}}
+\newcommand{\en}{\end{enumerate}}
+
+%%%%%%%%%%%Babak%%%%%%%%%%%
+
+\newcommand{\ada}[4]{\ensuremath{\frac{a^{(#1)}_{#2}}{a^{(#3)}_{#4}}}}
+\newcommand{\xb}[3]{\ensuremath{x_{#1}^{(#2,#3)}}}
+\newcommand{\yb}[3]{\ensuremath{y_{#1}^{(#2,#3)}}}
+
+
+%%%%%%%%%%%%% Double line letters using amssymb %%%%%%%%%%%%%%%%
+
+\def\identity{{\rlap{1} \hskip 1.6pt \hbox{1}}}
+\def\iden{\identity}
+
+\def\IB{\mathbb{B}}
+\def\IC{\mathbb{C}}
+\def\ID{\mathbb{D}}
+\def\IH{\mathbb{H}}
+\def\IM{\mathbb{M}}
+\def\IN{\mathbb{N}}
+\def\IP{\mathbb{P}}
+\def\IR{\mathbb{R}}
+\def\IZ{\mathbb{Z}}
+
+%%%%%%%%%%%%%%%% Caligraphic letters %%%%%%%%%%%%%%%%%%
+
+\def\CA{{\cal A}}
+\def\CB{{\cal B}}
+\def\CC{{\cal C}}
+\def\CD{{\cal D}}
+\def\CE{{\cal E}}
+\def\CF{{\cal F}}
+\def\CG{{\cal G}}
+\def\CH{{\cal H}}
+\def\CI{{\cal I}}
+\def\CJ{{\cal J}}
+\def\CK{{\cal K}}
+\def\CL{{\cal L}}
+\def\CM{{\cal M}}
+\def\CN{{\cal N}}
+\def\CO{{\cal O}}
+\def\CP{{\cal P}}
+\def\CQ{{\cal Q}}
+\def\CR{{\cal R}}
+\def\CS{{\cal S}}
+\def\CT{{\cal T}}
+\def\CU{{\cal U}}
+\def\CV{{\cal V}}
+\def\CW{{\cal W}}
+\def\CX{{\cal X}}
+\def\CY{{\cal Y}}
+\def\CZ{{\cal Z}}
+
+%%%%%%%%%%%%%%%%%% Greek letters %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\e{\epsilon}
+\def\ve{\varepsilon}
+\def\z{\zeta}
+% eta
+\def\th{\theta}
+\def\vth{\vartheta}
+\def\i{\iota}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\m{\mu}
+\def\n{\nu}
+% xi
+% o
+% pi
+\def\vp{\varpi}
+\def\r{\rho}
+\def\vr{\varrho}
+\def\s{\sigma}
+\def\vs{\varsigma}
+\def\t{\tau}
+\def\u{\upsilon}
+% phi
+\def\vph{\varphi}
+% chi
+\def\ch{\chi}
+% psi
+\def\w{\omega}
+%
+\def\G{\Gamma}
+\def\D{\Delta}
+\def\Th{\Theta}
+\def\L{\Lambda}
+% Xi
+% Pi
+\def\S{\Sigma}
+\def\Y{\Upsilon}
+% Phi
+% Psi
+\def\O{\Omega}
+
+%%%%%%%%%%%%%%%%% GR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\chris}[2]{\Gamma^{#1}_{\,\,\,\,#2}}
+
+%%%%%%%%%%%%%%%%% Mathematical Symbols %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\half{\frac{1}{2}}
+\def\imp{\Longrightarrow}
+\def\goto{\rightarrow}
+\def\para{\parallel}
+\def\vev#1{\langle #1 \rangle}
+\def\del{\nabla}
+\def\p{\partial}
+\newcommand{\bra}[1]{\langle{#1}|}
+\newcommand{\ket}[1]{|{#1}\rangle}
+
+\newcommand{\suup}{1}
+\newcommand{\sudown}{2}
+
+%%%%%%%%%%%%%%%%%%%% Normal font in math %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\Tr{{\rm Tr}}
+\def\tr{{\rm Tr}}
+\def\det{{\rm det}}
+\def\PE{{\rm PE}}
+
+%%%%%%%%%%%%%%%%%%%%% For this paper only %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\vec#1{\bm{#1}}
+
+\def\fa{\mathfrak{a}}
+\def\fb{\mathfrak{b}}
+\def\fc{\mathfrak{c}}
+\def\fp{\mathfrak{p}}
+\def\fq{\mathfrak{q}}
+\def\ft{\mathfrak{t}}
+\def\fG{\mathfrak{G}}
+\def\PE{\textrm{PE}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setboardfontsize{8}
+\title{Test}
+
+%\preprint{}
+
+
+
+
+%\abstract{We compute}
+
+
+\begin{document}
+
+\maketitle
+
+\end{document}
